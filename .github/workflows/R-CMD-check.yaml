@@ -68,12 +68,16 @@ jobs:
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
       - name: Install system dependencies
-        if: runner.os == 'Linux'
+        if: runner.os != 'Windows'
         run: |
-          while read -r cmd
-          do
-            eval sudo $cmd
-          done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "16.04"))')
+          if[ "$RUNNER_OS" == "Linux" ]; then
+            while read -r cmd
+            do
+              eval sudo $cmd
+            done < <(Rscript -e 'writeLines(remotes::system_requirements("ubuntu", "16.04"))')
+          else
+            brew install fftw
+          fi
 
       - name: Install dependencies
         run: |

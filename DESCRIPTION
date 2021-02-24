@@ -10,3 +10,4 @@ Description: Provides a wrapper for several 'FFTW' functions. This package provi
 License: GPL (>= 2)
 ByteCompile: true
 URL: https://github.com/krahim/fftwtools
+VignetteBuilder: knitr
