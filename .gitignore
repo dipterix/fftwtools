@@ -15,3 +15,5 @@ vignettes/auto/
 .Rproj.user
 autoscan.log
 configure.scan
+src/Makevars
+.Rhistory

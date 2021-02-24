@@ -7,12 +7,12 @@ autom4te.cache/
 ^config.log
 ^config.status
 ^clean$
+^src/Makevars$
 src/build/autoconf/config
 README.md
 ~$
 buildNotesInR.txt
 ^speedTrials
 .github/
-
 ^.*\.Rproj$
 ^\.Rproj\.user$
