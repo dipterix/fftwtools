@@ -77,6 +77,8 @@ jobs:
       - name: Install system dependencies - Linux
         if: runner.os == 'Linux'
         run: |
+          # Add $HOME/bin to system path - tiny tex
+          echo "$HOME/bin" >> $GITHUB_PATH
           while read -r cmd
           do
             eval sudo $cmd
@@ -86,11 +88,6 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install fftw
-      
-      - name: Install system dependencies - Windows
-        if: runner.os == 'Windows'
-        run: |
-          choco install rtools
       
       - name: Install dependencies
         run: |

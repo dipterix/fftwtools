@@ -17,3 +17,4 @@ autoscan.log
 configure.scan
 src/Makevars
 .Rhistory
+.DS_Store
