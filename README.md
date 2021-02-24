@@ -1,4 +1,7 @@
+<!-- badges: start -->
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/fftwtools)](https://cran.r-project.org/package=fftwtools)
+[![R build status](https://github.com/krahim/fftwtools/workflows/R-CMD-check/badge.svg)](https://github.com/krahim/fftwtools/actions)
+<!-- badges: end -->
 
 NOTE: 
 I appreciate all contributions, pull requests, and help. I would like to keep this version ready to upload to CRAN. That means if a pull request does not pass R CMD check --as-cran with the latest version of R, I will only spend a short bit of time trying to debug it before removing it.

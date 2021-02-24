@@ -16,3 +16,4 @@ buildNotesInR.txt
 .github/
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.github$
