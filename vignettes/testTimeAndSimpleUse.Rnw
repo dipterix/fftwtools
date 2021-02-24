@@ -8,6 +8,9 @@
 %\usepackage{indentfirst}
 \usepackage[utf8]{inputenc}
 
+% Specify the vignette builder and encoding
+% \VignetteEngine{knitr::knitr}
+% \VignetteEncoding{UTF-8}
 % \VignetteIndexEntry{ffttools example and simple use example}
 
 \begin{document}
