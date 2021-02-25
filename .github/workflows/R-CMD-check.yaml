@@ -60,10 +60,21 @@ jobs:
         shell: Rscript {0}
       
       - name: Install tinytex
+        if: runner.os != 'Windows'
         run: |
           if(system.file('', package = 'tinytex') == ''){ install.packages('tinytex') }
           pkgs = readLines("https://yihui.org/gh/tinytex/tools/pkgs-yihui.txt")
           tinytex::install_tinytex(extra_packages = pkgs)
+          # Add $HOME/bin to system path - tiny tex
+          gh_path = Sys.getenv("GITHUB_PATH")
+          if(file.exists(gh_path)){
+            s = readLines(gh_path)
+          } else {
+            s = NULL
+          }
+          tex_path = file.path(Sys.getenv("HOME"), "bin")
+          tex_path = normalizePath(tex_path, mustWork=FALSE)
+          writeLines(c(s, tex_path), con = gh_path)
         shell: Rscript {0}
 
       - name: Cache R packages
@@ -77,8 +88,6 @@ jobs:
       - name: Install system dependencies - Linux
         if: runner.os == 'Linux'
         run: |
-          # Add $HOME/bin to system path - tiny tex
-          echo "$HOME/bin" >> $GITHUB_PATH
           while read -r cmd
           do
             eval sudo $cmd

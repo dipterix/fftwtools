@@ -1,3 +1,0 @@
-if test -z "${LIB_FFTW}" ; then
- LIB_FFTW="../inst/fftw-win"
-fi
